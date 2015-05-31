@@ -10,24 +10,26 @@ Controller->View:
 
 ## Env
 
-**Laravel 5 doesn't have detect environment**, use .env.example
+**Laravel 5 doesn't have environment detection**, use .env.example
 
-|      | 4.2 | 5
--------|-----|------
-env| app/config/[envfolder] | .env
+|       | 4.2 | 5 |
+|-------|-----|------|
+|env| app/config/[envfolder] | .env |
 
 ## Namespace
 * Naming Your Application (optional)
-```bash
+
+```
 php artisan app:name Mstar
 ```
 
+
 ## Route
 
-|  |  4.2 |  5
----|------|------
-middleware | filter | middleware
-where(global) | app/route.php | app/Providers/RouteServiceProvider.php
+|  |  4.2 |  5|
+|---|------|------|
+|middleware | filter | middleware|
+|where(global) | app/route.php |app/Providers/RouteServiceProvider.php|
 
 
 ### Middleware
@@ -115,7 +117,7 @@ public function boot(Router $router)
 
 ### Parent Class & Namespace
 
-* 4
+* 4.2
 
 ```php
 // app/controllers/HomeController.php
@@ -137,7 +139,7 @@ class HomeController extends Controller {}
 
 ### Parent Class & Namespace
 
-* 4
+* 4.2
 ```php
 // app/models/User.php
 class User extends Eloquent {
@@ -155,7 +157,7 @@ class User extends Model {
 
 ### Others
 
-* Laravel 5: if you wanna create instance, you have to set 
+* Laravel 5: if you wanna create instance, you have to set
 ```
 protected $guarded = [];
 
@@ -197,7 +199,7 @@ $report->reportAssigns
 * 4.2
   * HTML::
   * FORM::
-* 5 (It's removed, Solution)
+* 5 (It's removed, solution)
   1. [Adding html package](http://laravelcollective.com/docs/5.0/html)
   2. Using original html tag
 ```html
@@ -207,7 +209,7 @@ $report->reportAssigns
 ```html
 <link rel="stylesheet" href="{{ asset("css/style.css") }}">
 ```
-     
+
 ```
 <form>
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -219,14 +221,14 @@ $report->reportAssigns
 
 ### methods
 | 4.2 | 5 |
-|-----|----
-| **getTotal** | **total**
-| **links()** | **render()**
-| getCurrentPage | currentPage
-| getLastPage | lastPage
-| getPerPage | perPage
-| getFrom | firstItem
-| getTO | lastItem
+|-----|----|
+| **getTotal()** | **total()**|
+| **links()** | **render()**|
+| getCurrentPage() | currentPage()|
+| getLastPage() | lastPage()|
+| getPerPage() | perPage()|
+| getFrom() | firstItem()|
+| getTo() | lastItem()|
 
 ### Customize
 
@@ -247,7 +249,7 @@ $news->links('view.name');
 
 use Illuminate\Contracts\Pagination\Presenter as PresenterContract;
 
-class BootstrapThreePresenter implements PresenterContract 
+class BootstrapThreePresenter implements PresenterContract
 {
 }
 ```
@@ -263,34 +265,19 @@ $news->render($bootstrapThreePresenter);
 
 * 4.2, it doesn't maintain anymore.
 
-```json
+```
 "artdarek/oauth-4-laravel"
 ```
 
 * 5 (Official Package: Socialite), **Socialite needs your Google app to have Google+ API enabled.**
 
-```json
+```
 "laravel/socialite": "~2.0"
 ```
 
 ### Predis
 * Adding predis to proeject composer.json require block, **In laravel 5,  predis move from require to require-dev.**
 
-```json
+```
 "predis/predis": "~1.0"
 ```
-
-## Cache
-
-```bash
-#config
-php artisan config:cache
-#route
-php artisan route::cache
-php artisan route::clear
-```
-
-## Maintenance Mode
-Redirect to 503 page
-> php artisan down
-> php artisan up
