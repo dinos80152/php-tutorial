@@ -24,7 +24,7 @@ array_filter(array('', true, 's', 0, null));
 
 ## Map
 
-*array_map* 會將 array 裡的元素一一經過指定的 function 處理，並將結果丟進另一個 array 傳出來。
+*array_map* 會將每個 array 裡的元素經過指定的 function 處理，並將結果丟進另一個 array 傳出來。
 
 ```php
 array array_map ( callable $callback , array $array1 [, array $... ] )
@@ -53,7 +53,7 @@ array_map('map_num', $number, $number_eng);
 //[1 => 'one', 2 => 'two', 3 => 'three', 4 => 'four', 5 => 'five']
 ```
 
-這邊有個很像的叫 *array_walk*，它會走訪每個元素，但是是回傳 boolean，若全部成功走完傳回 true，沒走完回傳 false。
+這邊有個很像的叫 *array_walk*，它會走訪每個元素，但是回傳 boolean，若全部成功走完傳回 true，沒走完回傳 false。
 
 
 ```php
