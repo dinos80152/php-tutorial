@@ -1,70 +1,5 @@
-# Functional Programming in PHP
+# Lambda
 
-## array_sum
-* sum from 1 to 10
-
-```php
-array_sum(range(1, 10));
-```
-
-## array_filter
-
-```php
-array_filter($allow_ips, function($ip) {
-    return $ip == $_SERVER['REMOTE_ADDR'];
-}) ? : throw new Exception('Denied IP');
-```
-
-```php
-array_filter(array('', 's', 0))
-```
-
-## Map
-
-```php
-$array = ['p', 'h', 'p'];
-$post_array = array_map(function($value) {
-    return strtoupper($value);
-}, $array);
-var_dump($post_array); //['P', 'H', 'P']
-```
-## Reduce
-
-* loop
-```php
-function multiply_array($array) {
-    foreach($array as $value) {
-        $sum *= $value;
-    }
-
-    return $sum;
-}
-
-multiply_array([1, 2, 3, 4, 5]);
-```
-
-* array_reduce
-
-```php
-$array = [1, 2, 3, 4, 5];
-array_reduce($array, function($carry, $item) {
-    return $carry *= $item;
-}, 10);
-
-//1200, because: 10*1*2*3*4*5
-```
-
-## Map and Reduce
-
-```php
-$array = ['p', 'h', 'p'];
-array_reduce(array_map(function($value) {
-    return strtoupper($value);
-}, $array), function($carry, $value) {
-    return $carry .= $value;
-});
-//PHP
-```
 ## Recursion
 
 * loop
@@ -108,8 +43,8 @@ $func_name = function($param) use ($plus_one) {
 echo $func_name(3); //7
 ```
 
-## Examples
-* Advanced
+## Advanced
+
 ```php
 $data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 function get_algorithm($rand_seed_func) {
@@ -119,7 +54,7 @@ function get_algorithm($rand_seed_func) {
         }
         : function($value) use ($rand_seed_func) {
             return ($value * $value / $rand_seed_func()) + 10;
-        }
+        };
 }
 
 function odd_even($value) {
@@ -132,7 +67,7 @@ $rand_seed_func = function() {
 
 $results = array_map(get_algorithm($rand_seed_func), $data);
 ```
-* Partial
+## Partial
 
 ```php
 $first_char = function($string) {
@@ -143,7 +78,7 @@ array_map($first_char, ['Dino', 'Amy', 'Birdy']);
 // ['D', 'A', 'B']
 ```
 
-* Currying
+## Currying
 
 ```php
 $first_char = function($start) {
@@ -172,13 +107,8 @@ function demo() {
 }
 ```
 
-## Iterator
+## Reference
 
-## Generator
-
-### Reference
 1. [Functional Programming in PHP by Simon Holywell](https://www.simonholywell.com/static/slides/2014-02-12/)
-2. [PHP Manual - Array Functions](http://php.net/manual/en/function.array.php)
-3. [PHP Manual - Variable functions](http://php.net/manual/en/function.array.php)
-4. [PHP Manual - Anonymous functions](http://php.net/manual/en/functions.anonymous.php)
-5. [PHP Manual - Predefined Interfaces and Classes](http://php.net/manual/en/reserved.interfaces.php)
+2. [PHP Manual - Variable functions](http://php.net/manual/en/function.array.php)
+3. [PHP Manual - Anonymous functions](http://php.net/manual/en/functions.anonymous.php)
