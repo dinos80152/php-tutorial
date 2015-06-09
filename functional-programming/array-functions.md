@@ -1,5 +1,4 @@
-# Functional Programming in PHP
-
+# Array Functions
 ## Filter
 
 *array_filter* 會去走訪 array 裡的所有元素，並將符合條件的串成 array 回傳出來。
