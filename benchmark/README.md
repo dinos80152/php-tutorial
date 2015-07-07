@@ -51,4 +51,6 @@ $spend_time = $end_time - $start_time;
 
 ## Tools
 
+* [Xdebug](http://xdebug.org/index.php)
+
 * [victorjonsson/PHP-Benchmark](https://github.com/victorjonsson/PHP-Benchmark)
