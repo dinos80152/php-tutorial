@@ -73,7 +73,7 @@ class User
         $user_amount = count($this->users);
         for ($i = 0; $i < $user_amount; $i++) {
             if(strpos($this->users[$i][name], $name)) {
-                array_push($this->users[$i]);
+                array_push($user_matches, $this->users[$i]);
             }
         }
 
