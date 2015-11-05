@@ -140,14 +140,35 @@ composer create-project dinolai/hello-world hello-world.com ~1.2
 ```
 
 ## Resources
+
+### PHP
 [Packagist](https://packagist.org/)
 
-## Laravel
+### Laravel
 
-### Package Development
+#### Package Development
 [Package Development@laravel.com](http://laravel.com/docs/5.1/packages)
 
-### Resources
+#### Resources
 [Packalyst](http://packalyst.com/)
+
+
+## Best Practice
+* [License](http://www.openfoundry.org/tw/comparison-of-licenses)
+* Exclude development stuff from dist
+* PSR-4 autoloading
+* PSR-2 coding standard
+* Code comments
+* Semantic versioning
+* Unit Tests
+* Continuous Integration
+* README.md
+
+[PHP Package Checklist](http://phppackagechecklist.com/)
+
+## Reference
+* [Creating your first Composer/Packagist package](http://blog.grossi.io/2013/creating-your-first-composer-packagist-package/)
+* [Starting a New PHP Package The Right Way](http://www.sitepoint.com/starting-new-php-package-right-way/)
+
 
 
