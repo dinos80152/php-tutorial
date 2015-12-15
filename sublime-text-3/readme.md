@@ -10,6 +10,9 @@
 
 * [Sublime PHP Companion](https://github.com/erichard/SublimePHPCompanion)
 
+* [SublimeLinter 3](http://www.sublimelinter.com/en/latest/index.html)
+  * [SublimeLinter-php](https://github.com/SublimeLinter/SublimeLinter-php)
+
 * [DocBlockr](https://github.com/spadgos/sublime-jsdocs)
 
 ### Laravel
