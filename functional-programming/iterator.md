@@ -1,4 +1,4 @@
-# Interator
+# Iterator
 
 ## Iterator
 
@@ -54,5 +54,7 @@ foreach($it as $key => $value) {
     echo "\n";
 }
 ```
+
 ## Reference
-1. [PHP Manual - Predefined Interfaces and Classes - The Iterator Interface](http://php.net/manual/en/class.iterator.php)
+
+* [PHP Manual - Predefined Interfaces and Classes - The Iterator Interface](http://php.net/manual/en/class.iterator.php)
